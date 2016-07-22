@@ -14,27 +14,37 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        List<String> data = new ArrayList<>();
+        List<ListItem> items = new ArrayList<>();
 
-        data.add("test");
-        data.add("picture");
-        data.add("test");
-        data.add("button");
-        data.add("test");
-        data.add("test");
-        data.add("button");
-        data.add("test");
-        data.add("test");
-        data.add("picture");
-        data.add("picture");
-        data.add("test");
-        data.add("button");
-        data.add("picture");
-        data.add("button");
-        data.add("button");
+        ListItem buttonItem = new ButtonItem(getApplicationContext());
+        ListItem pictureItem = new PictureItem("picture");
+        ListItem textItem = new TextItem("test");
 
+        items.add(buttonItem);
+        items.add(pictureItem);
+        items.add(textItem);
+
+        items.add(buttonItem);
+        items.add(pictureItem);
+        items.add(textItem);
+
+        items.add(buttonItem);
+        items.add(pictureItem);
+        items.add(textItem);
+
+        items.add(buttonItem);
+        items.add(pictureItem);
+        items.add(textItem);
+
+        items.add(buttonItem);
+        items.add(pictureItem);
+        items.add(textItem);
+
+        items.add(buttonItem);
+        items.add(pictureItem);
+        items.add(textItem);
 
         ListView listView = (ListView) findViewById(R.id.listView);
-        listView.setAdapter(new MyAdapter(this, data));
+        listView.setAdapter(new MyAdapter(this, items));
     }
 }
